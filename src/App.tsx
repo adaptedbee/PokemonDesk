@@ -1,15 +1,15 @@
 import React from 'react';
-import cn from 'classnames';
-
-import './custom.css';
-import s from './App.modules.scss';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
-    <div className={cn(s.header, 'color')}>
-      Yes, We Did It! This is App Component!
-    </div>
-  )
-}
+    <>
+      <Header />
+      <div>content</div>
+      <Footer />
+    </>
+  );
+};
 
 export default App;
