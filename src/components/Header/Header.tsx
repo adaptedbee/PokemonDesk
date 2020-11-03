@@ -1,33 +1,34 @@
 import React from 'react';
+import cn from 'classnames';
 
-// import s from './Header.module.scss';
+import s from './Header.module.scss';
 
 const Header = () => {
   return (
-    <header className="header">
-      <div className="header__wrapper">
-        <a className="header__logo" href="/">
+    <header className={s.header}>
+      <div className={s.header__wrapper}>
+        <a className={s.header__logo} href="/">
           <img src="" width="157" height="63" alt="" />
         </a>
 
-        <ul className="header__menu">
+        <ul className={s.header__menu}>
           <li>
-            <a className="header__menu-link header__menu-link--active" href="/">
+            <a className={cn(s.header__menuLink, s.header__menuLinkActive)} href="/">
               Home
             </a>
           </li>
           <li>
-            <a className="header__menu-link" href="/">
+            <a className={s.header__menuLink} href="/">
               Pokédex
             </a>
           </li>
           <li>
-            <a className="header__menu-link" href="/">
+            <a className={s.header__menuLink} href="/">
               Legendaries
             </a>
           </li>
           <li>
-            <a className="header__menu-link" href="/">
+            <a className={s.header__menuLink} href="/">
               Documentation
             </a>
           </li>
