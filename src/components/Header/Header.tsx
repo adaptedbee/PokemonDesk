@@ -2,13 +2,14 @@ import React from 'react';
 import cn from 'classnames';
 
 import s from './Header.module.scss';
+import PokemonLogo from './img/logo.svg';
 
 const Header = () => {
   return (
     <header className={s.header}>
       <div className={s.header__wrapper}>
         <a className={s.header__logo} href="/">
-          <img src="" width="157" height="63" alt="" />
+          <img src={PokemonLogo} width="157" height="63" alt="Pokemon logo" />
         </a>
 
         <ul className={s.header__menu}>

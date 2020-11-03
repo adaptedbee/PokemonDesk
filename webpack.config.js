@@ -4,13 +4,13 @@ const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
   resolve: {
-    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json']
+    extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
   },
   mode: NODE_ENV ? NODE_ENV : 'development',
   entry: path.resolve(__dirname, 'src/index.ts'),
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'main.js',
   },
   module: {
     rules: [
@@ -36,17 +36,28 @@ module.exports = {
                 localIdentName: '[name]__[local]__[hash:base64:5]',
                 auto: /\.module\.\w+$/i,
               },
-            }
+            },
           },
-          'sass-loader'
+          'sass-loader',
         ],
-      }
-    ]
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[hash]-[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
-    })
+    }),
   ],
   devServer: {
     port: 3000,
