@@ -1,0 +1,38 @@
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+
+  width: 100%;
+}
+
+.footer__wrapper {
+  width: 1120px;
+  margin: 0 auto;
+  padding-top: 33px;
+  padding-bottom: 33px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__info {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-family: Karla, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #212121;
+}
+
+.footer__infoLink {
+  font-family: Karla, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: #212121;
+  text-decoration: none;
+}

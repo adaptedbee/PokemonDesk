@@ -1,18 +1,18 @@
 import React from 'react';
 
-// import s from './Footer.module.scss';
+import s from './Footer.module.scss';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="footer__wrapper">
-        <p className="footer__info">
-          Made with{' '}
+    <footer className={s.footer}>
+      <div className={s.footer__wrapper}>
+        <p className={s.footer__info}>
+          Made with
           <span role="img" aria-label="love">
-            ❤️
+            &nbsp;❤️
           </span>
         </p>
-        <a className="footer__company" href="/">
+        <a className={s.footer__infoLink} href="/">
           Ours Team
         </a>
       </div>
