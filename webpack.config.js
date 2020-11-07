@@ -12,6 +12,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
   },
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/,
+    poll: 1000,
+  },
   module: {
     rules: [
       {
@@ -42,15 +47,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: 'images/[hash]-[name].[ext]',
-            },
-          },
-        ],
+        test: /\.svg$/,
+        use: ['@svgr/webpack', 'url-loader'],
       },
     ],
   },

@@ -1,10 +1,12 @@
+@import '../../variables';
+
 .header {
-  background-color: #f5db13;
+  background-color: $third;
   box-shadow: 0px 4px 16px rgba(1, 28, 64, 0.2);
 }
 
-.header__wrapper {
-  width: 1120px;
+.headerWrapper {
+  max-width: 1120px;
   margin: 0 auto;
   padding-top: 15px;
   padding-bottom: 15px;
@@ -14,22 +16,23 @@
   justify-content: space-between;
 }
 
-.header__logo {
+.headerLogo {
   width: 157px;
   height: 63px;
 }
 
-.header__menu {
+.headerMenu {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
+  max-width: 650px;
 
   display: flex;
   align-items: center;
 }
 
-.header__menu li {
+.headerMenu li {
   margin-right: 55px;
 
   &:last-child {
@@ -37,17 +40,36 @@
   }
 }
 
-.header__menuLink {
+.headerMenuLink {
   display: block;
   padding-bottom: 16px;
+  position: relative;
 
   font-family: Karla, Arial, sans-serif;
   font-size: 25px;
   line-height: 29px;
-  color: #000000;
+  color: $dark;
   text-decoration: none;
 
-  &Active {
-    border-bottom: 3px solid #212121;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 1%;
+    height: 1px;
+    background-color: $dark;
+    border: 1px solid $dark;
+    border-radius: 3px;
+    opacity: 0;
+
+    transition: opacity, width ease-in-out 0.25s;
+  }
+  &:not(&Active):hover::after,
+  &Active::after {
+    width: 100%;
+    opacity: 1;
   }
 }

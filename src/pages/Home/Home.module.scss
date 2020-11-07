@@ -1,0 +1,11 @@
+@import '../../variables';
+
+.homePage {
+  height: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: linear-gradient(180deg, $third 0%, $primary 100%);
+}

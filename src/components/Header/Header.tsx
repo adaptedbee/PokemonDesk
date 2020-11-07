@@ -4,27 +4,27 @@ import cn from 'classnames';
 import s from './Header.module.scss';
 import PokemonLogo from './img/logo.svg';
 
-type MainMenuItem = { id: string; name: string; href: string };
-const mainMenu: MainMenuItem[] = [
-  { id: '1', name: 'Home', href: '/' },
-  { id: '2', name: 'Pokédex', href: '/' },
-  { id: '3', name: 'Legendaries', href: '/' },
-  { id: '4', name: 'Documentation', href: '/' },
+type MainMenuItem = { id: number; name: string; slug: string };
+const MAIN_MENU: MainMenuItem[] = [
+  { id: 1, name: 'Home', slug: '#' },
+  { id: 2, name: 'Pokédex', slug: '#' },
+  { id: 3, name: 'Legendaries', slug: '#' },
+  { id: 4, name: 'Documentation', slug: '#' },
 ];
 
 const Header = () => {
   return (
     <header className={s.header}>
-      <div className={s.header__wrapper}>
-        <a className={s.header__logo} href="/">
+      <div className={s.headerWrapper}>
+        <a className={s.headerLogo} href="/">
           <img src={PokemonLogo} width="157" height="63" alt="Pokemon logo" />
         </a>
 
-        <ul className={s.header__menu}>
-          {mainMenu.map((item) => (
-            <li key={item.id}>
-              <a className={cn(s.header__menuLink)} href={item.href}>
-                {item.name}
+        <ul className={s.headerMenu}>
+          {MAIN_MENU.map(({ id, name, slug }) => (
+            <li key={id}>
+              <a className={cn(s.headerMenuLink)} href={slug}>
+                {name}
               </a>
             </li>
           ))}
