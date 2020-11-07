@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import s from './Header.module.scss';
-import PokemonLogo from './img/logo.svg';
+import { ReactComponent as PokemonLogo } from './img/logo.svg';
 
 interface MainMenuItem {
   id: number;
@@ -22,7 +22,7 @@ const Header = () => {
     <header className={s.header}>
       <div className={s.headerWrapper}>
         <a className={s.headerLogo} href="/">
-          <img src={PokemonLogo} width="157" height="63" alt="Pokemon logo" />
+          <PokemonLogo />
         </a>
 
         <ul className={s.headerMenu}>
