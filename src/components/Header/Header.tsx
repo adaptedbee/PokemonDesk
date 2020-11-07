@@ -4,7 +4,12 @@ import cn from 'classnames';
 import s from './Header.module.scss';
 import PokemonLogo from './img/logo.svg';
 
-type MainMenuItem = { id: number; name: string; slug: string };
+interface MainMenuItem {
+  id: number;
+  name: string;
+  slug: string;
+}
+
 const MAIN_MENU: MainMenuItem[] = [
   { id: 1, name: 'Home', slug: '#' },
   { id: 2, name: 'Pokédex', slug: '#' },
