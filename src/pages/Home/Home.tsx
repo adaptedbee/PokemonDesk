@@ -3,6 +3,7 @@ import Button from '../../components/Button/Button';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 import Layout from '../../components/Layout/Layout';
+import Parallax from '../../components/Parallax/Parallax';
 
 import s from './Home.module.scss';
 
@@ -16,7 +17,10 @@ const HomePage = () => {
             <b>Find</b> all your favorite <b>Pokemon</b>
           </h1>
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-          <Button onClick={() => alert('Click Button!')}>See pokemons</Button>
+          <Button onClick={() => undefined}>See pokemons</Button>
+        </div>
+        <div>
+          <Parallax />
         </div>
       </Layout>
       <Footer />
