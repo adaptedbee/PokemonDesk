@@ -11,15 +11,15 @@ const HomePage = () => {
   return (
     <div className={s.homePage}>
       <Header />
-      <Layout>
-        <div>
+      <Layout className={s.homePageWrapper}>
+        <div className={s.homePageInfo}>
           <h1>
             <b>Find</b> all your favorite <b>Pokemon</b>
           </h1>
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
           <Button onClick={() => undefined}>See pokemons</Button>
         </div>
-        <div>
+        <div className={s.homePageParallaxWrapper}>
           <Parallax />
         </div>
       </Layout>

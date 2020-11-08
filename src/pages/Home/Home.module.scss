@@ -3,9 +3,56 @@
 .homePage {
   height: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
 
   background: linear-gradient(180deg, $third 0%, $primary 100%);
+}
+
+.homePageWrapper {
+  margin-top: 67px;
+
+  display: flex;
+  align-items: flex-start;
+}
+
+.homePageInfo {
+  margin-top: 61px;
+}
+
+.homePageInfo h1 {
+  margin-top: 0;
+  margin-bottom: 64px;
+  width: 506px;
+
+  font-family: Karla, Arial, sans-serif;
+  font-size: 72px;
+  line-height: 84px;
+  font-weight: normal;
+  letter-spacing: 4px;
+  color: $dark;
+
+  & b {
+    font-weight: bold;
+  }
+}
+
+.homePageInfo p {
+  margin-top: 0;
+  margin-bottom: 64px;
+  width: 515px;
+
+  font-family: Karla, Arial, sans-serif;
+  font-size: 32px;
+  line-height: 37px;
+  color: $dark;
+}
+
+.homePageParallaxWrapper {
+  width: 793px;
+  height: 680px;
+  margin-top: 40px;
+  margin-right: -160px;
 }

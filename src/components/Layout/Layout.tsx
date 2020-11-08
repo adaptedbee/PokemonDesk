@@ -8,7 +8,7 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children, className = null }) => (
-  <div className={cn(s.root, className)}>{children}</div>
+  <div className={cn(s.layout, className)}>{children}</div>
 );
 
 export default Layout;
