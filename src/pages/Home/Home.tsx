@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../../components/Button/Button';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
+import Heading from '../../components/Heading/Heading';
 import Layout from '../../components/Layout/Layout';
 import Parallax from '../../components/Parallax/Parallax';
 
@@ -13,9 +14,9 @@ const HomePage = () => {
       <Header />
       <Layout className={s.homePageWrapper}>
         <div className={s.homePageInfo}>
-          <h1>
+          <Heading size="h1">
             <b>Find</b> all your favorite <b>Pokemon</b>
-          </h1>
+          </Heading>
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
           <Button onClick={() => undefined}>See pokemons</Button>
         </div>
