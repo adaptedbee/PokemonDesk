@@ -1,4 +1,5 @@
 import React from 'react';
+import { RouteComponentProps } from 'react-router-dom';
 import Button from '../../components/Button/Button';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -8,7 +9,11 @@ import Parallax from '../../components/Parallax/Parallax';
 
 import s from './Home.module.scss';
 
-const HomePage = () => {
+const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
+  const goToPokemons = () => {
+    history.push('/pokedex');
+  };
+
   return (
     <div className={s.homePage}>
       <Header />
@@ -18,7 +23,7 @@ const HomePage = () => {
             <b>Find</b> all your favorite <b>Pokemon</b>
           </Heading>
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-          <Button onClick={() => undefined}>See pokemons</Button>
+          <Button onClick={goToPokemons}>See pokemons</Button>
         </div>
         <div className={s.homePageParallaxWrapper}>
           <Parallax />
