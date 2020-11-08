@@ -2,6 +2,9 @@
 // Please do not change this file!
 interface CssExports {
   button: string;
+  fullWidth: string;
+  smallSize: string;
+  yellow: string;
 }
 export const cssExports: CssExports;
 export default cssExports;
