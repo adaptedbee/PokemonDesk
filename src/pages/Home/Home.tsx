@@ -23,7 +23,9 @@ const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
             <b>Find</b> all your favorite <b>Pokemon</b>
           </Heading>
           <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
-          <Button onClick={goToPokemons}>See pokemons</Button>
+          <Button onClick={goToPokemons} color="yellow">
+            See pokemons
+          </Button>
         </div>
         <div className={s.homePageParallaxWrapper}>
           <Parallax />

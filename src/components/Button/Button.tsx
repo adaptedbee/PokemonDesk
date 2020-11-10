@@ -6,17 +6,17 @@ import s from './Button.module.scss';
 interface ButtonProps {
   onClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
   fullWidth?: boolean;
-  isYellow?: boolean;
+  color?: string;
   size?: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth, isYellow, size }) => {
+const Button: React.FC<ButtonProps> = ({ children, onClick, fullWidth, color, size }) => {
   return (
     <button
       type="button"
       className={cn(s.button, {
         fullWidth,
-        yellow: isYellow,
+        yellow: color === 'yellow',
         smallSize: size === 'small',
       })}
       onClick={onClick}>
