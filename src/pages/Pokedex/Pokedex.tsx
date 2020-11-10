@@ -5,12 +5,16 @@ import Layout from '../../components/Layout/Layout';
 
 // import s from './Pokedex.module.scss';
 
-const PokedexPage = () => {
+interface PokedexPageProps {
+  title?: string;
+}
+
+const PokedexPage: React.FC<PokedexPageProps> = ({ title }) => {
   return (
     <div>
       <Header />
       <Layout>
-        <p>POKEDEX PAGE</p>
+        <h1>{title}</h1>
       </Layout>
       <Footer />
     </div>
