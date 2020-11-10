@@ -1,9 +1,14 @@
 import React from 'react';
+import { Pokemon } from '../../pokemons';
 import Heading from '../Heading/Heading';
 
 import s from './PokemonCard.module.scss';
 
-const PokemonCard = () => {
+interface PokemonCardProps {
+  pokemon: Pokemon;
+}
+
+const PokemonCard: React.FC<PokemonCardProps> = ({ children, pokemon }) => {
   return (
     <div className={s.root}>
       <div className={s.infoWrap}>
