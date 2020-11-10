@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { Link } from 'react-router-dom';
+import { A } from 'hookrouter';
 
 import s from './Header.module.scss';
 import { ReactComponent as PokemonLogo } from './img/logo.svg';
@@ -22,16 +22,16 @@ const Header = () => {
   return (
     <header className={s.header}>
       <div className={s.headerWrapper}>
-        <Link className={s.headerLogo} to="/">
+        <A className={s.headerLogo} href="/">
           <PokemonLogo />
-        </Link>
+        </A>
 
         <ul className={s.headerMenu}>
           {MAIN_MENU.map(({ id, name, slug }) => (
             <li key={id}>
-              <Link className={cn(s.headerMenuLink)} to={slug}>
+              <A className={cn(s.headerMenuLink)} href={slug}>
                 {name}
-              </Link>
+              </A>
             </li>
           ))}
         </ul>
