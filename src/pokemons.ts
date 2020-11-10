@@ -1,7 +1,16 @@
+interface PokemonStats {
+  hp: number;
+  attack: number;
+  defense: number;
+  'special-attack': number;
+  'special-defense': number;
+  speed: number;
+}
+
 export interface Pokemon {
   cleanName: string;
   abilities: string[];
-  stats: Object;
+  stats: PokemonStats;
   types: string[];
   img: string;
   name: string;
