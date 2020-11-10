@@ -1,0 +1,13 @@
+@import '../../variables';
+
+.headline h1 {
+  font-family: Karla, Arial, sans-serif;
+  color: $dark;
+}
+
+h1.headline {
+  font-size: 72px;
+  line-height: 84px;
+  font-weight: normal;
+  letter-spacing: 4px;
+}
