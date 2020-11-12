@@ -6,12 +6,13 @@ import Header from '../../components/Header/Header';
 import Heading from '../../components/Heading/Heading';
 import Layout from '../../components/Layout/Layout';
 import Parallax from '../../components/Parallax/Parallax';
+import { LinksEnum } from '../../routes';
 
 import s from './Home.module.scss';
 
 const HomePage: React.FC = () => {
   const goToPokemons = () => {
-    navigate('/pokedex');
+    navigate(LinksEnum.POKEDEX);
   };
 
   return (

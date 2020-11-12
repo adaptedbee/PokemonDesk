@@ -1,10 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 import { A, usePath } from 'hookrouter';
+import { LinksEnum, MAIN_MENU } from '../../routes';
 
 import s from './Header.module.scss';
 import { ReactComponent as PokemonLogo } from './img/logo.svg';
-import { MAIN_MENU } from '../../routes';
 
 const Header = () => {
   const path = usePath();
@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className={s.header}>
       <div className={s.headerWrapper}>
-        <A className={s.headerLogo} href="/">
+        <A className={s.headerLogo} href={LinksEnum.HOME}>
           <PokemonLogo />
         </A>
 
