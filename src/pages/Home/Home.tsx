@@ -1,5 +1,5 @@
 import React from 'react';
-import { RouteComponentProps } from 'react-router-dom';
+import { navigate } from 'hookrouter';
 import Button from '../../components/Button/Button';
 import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
@@ -9,9 +9,9 @@ import Parallax from '../../components/Parallax/Parallax';
 
 import s from './Home.module.scss';
 
-const HomePage: React.FC<RouteComponentProps> = ({ history }) => {
+const HomePage: React.FC = () => {
   const goToPokemons = () => {
-    history.push('/pokedex');
+    navigate('/pokedex');
   };
 
   return (
