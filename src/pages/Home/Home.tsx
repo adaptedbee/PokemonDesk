@@ -2,21 +2,20 @@ import React from 'react';
 import { navigate } from 'hookrouter';
 import Button from '../../components/Button/Button';
 import Footer from '../../components/Footer/Footer';
-import Header from '../../components/Header/Header';
 import Heading from '../../components/Heading/Heading';
 import Layout from '../../components/Layout/Layout';
 import Parallax from '../../components/Parallax/Parallax';
+import { LinksEnum } from '../../routes';
 
 import s from './Home.module.scss';
 
 const HomePage: React.FC = () => {
   const goToPokemons = () => {
-    navigate('/pokedex');
+    navigate(LinksEnum.POKEDEX);
   };
 
   return (
     <div className={s.homePage}>
-      <Header />
       <Layout className={s.homePageWrapper}>
         <div className={s.homePageInfo}>
           <Heading size="h1">
