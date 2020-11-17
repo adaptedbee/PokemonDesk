@@ -16,7 +16,7 @@ interface UseDataResult {
   isError: boolean;
 }
 
-const useData = (endpoint: string): UseDataResult => {
+const useData = (endpoint: string, query: object, deps: any[] = []): UseDataResult => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -25,7 +25,7 @@ const useData = (endpoint: string): UseDataResult => {
     const getData = async () => {
       setIsLoading(true);
       try {
-        const result = await req(endpoint);
+        const result = await req(endpoint, query);
 
         setData(result);
       } catch (error) {
@@ -36,7 +36,7 @@ const useData = (endpoint: string): UseDataResult => {
     };
 
     getData();
-  }, []);
+  }, deps);
 
   return {
     data,
