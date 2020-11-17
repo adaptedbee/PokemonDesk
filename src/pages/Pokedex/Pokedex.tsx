@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../../components/Footer/Footer';
 import Layout from '../../components/Layout/Layout';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
-import config from '../../config';
 import { Pokemon } from '../../pokemons';
+import req from '../../utils/requests';
 
 import s from './Pokedex.module.scss';
 
@@ -33,10 +33,8 @@ const usePokemons = (): UsePokemonsResult => {
   useEffect(() => {
     const getPokemons = async () => {
       setIsLoading(true);
-      const url = `${config.client.server.protocol}://${config.client.server.host}${config.client.endpoint.getPokemons.uri.pathname}`;
       try {
-        const response = await fetch(url);
-        const result = await response.json();
+        const result = await req('getPokemons');
 
         setData(result);
       } catch (error) {
