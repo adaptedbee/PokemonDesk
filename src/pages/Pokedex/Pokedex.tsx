@@ -19,13 +19,13 @@ interface PokemonsData {
 }
 
 interface UsePokemonsResult {
-  data: PokemonsData | undefined;
+  data: PokemonsData | null;
   isLoading: boolean;
   isError: boolean;
 }
 
 const usePokemons = (): UsePokemonsResult => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
