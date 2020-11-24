@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Pokemon } from '../pokemons';
 import req from '../utils/requests';
 
-export interface IResponse {
+export interface IPokemonsResponse {
   total: number;
   count: number;
   offset: number;
