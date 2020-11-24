@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Pokemon } from '../pokemons';
 import req from '../utils/requests';
 
-interface ResponseData {
+export interface IResponse {
   total: number;
   count: number;
   offset: number;
@@ -10,22 +10,16 @@ interface ResponseData {
   pokemons: Pokemon[];
 }
 
-interface UseDataResult {
-  data: ResponseData | null;
-  isLoading: boolean;
-  isError: boolean;
-}
-
-const useData = (endpoint: string, query: object, deps: any[] = []): UseDataResult => {
-  const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
+const useData = <T>(endpoint: string, query: object, deps: any[] = []) => {
+  const [data, setData] = useState<T | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isError, setIsError] = useState<boolean>(false);
 
   useEffect(() => {
-    const getData = async () => {
+    const getData = async (): Promise<void> => {
       setIsLoading(true);
       try {
-        const result = await req(endpoint, query);
+        const result = await req<T>(endpoint, query);
 
         setData(result);
       } catch (error) {
