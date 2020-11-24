@@ -3,6 +3,7 @@ import Footer from '../../components/Footer/Footer';
 import Layout from '../../components/Layout/Layout';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import useData, { IResponse } from '../../hook/useData';
+import useDebounce from '../../hook/useDebounce';
 import { Pokemon } from '../../pokemons';
 
 import s from './Pokedex.module.scss';
@@ -18,8 +19,9 @@ interface IQuery {
 const PokedexPage: React.FC<PokedexPageProps> = ({ title }) => {
   const [searchValue, setSearchValue] = useState('');
   const [query, setQuery] = useState<IQuery>({});
+  const debouncedValue = useDebounce(searchValue, 500);
 
-  const { data, isLoading, isError } = useData<IResponse>('getPokemons', query, [searchValue]);
+  const { data, isLoading, isError } = useData<IResponse>('getPokemons', query, [debouncedValue]);
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value);
