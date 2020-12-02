@@ -1,7 +1,12 @@
+import fs from 'fs';
+import path from 'path';
+import handlebars from 'handlebars';
+
 import Hapi from '@hapi/hapi';
 import React from 'react';
 import ReactDom from 'react-dom/server';
 import { setPath } from 'hookrouter';
+import Inert from '@hapi/inert';
 import App from '../App';
 
 const init = async () => {
@@ -10,13 +15,26 @@ const init = async () => {
     host: 'localhost',
   });
 
+  await server.register(Inert);
+
+  server.route({
+    method: 'GET',
+    path: '/main.js',
+    handler: (request, h) => h.file(path.join(process.cwd(), 'dist', 'main.js')),
+  });
+
   server.route({
     method: 'GET',
     path: '/{any*}',
     handler: (request) => {
       setPath(request.path);
+      const pathIndexHtml = path.join(process.cwd(), 'dist', 'index.html');
+      const template = handlebars.compile(fs.readFileSync(pathIndexHtml, 'utf8'));
       const result = ReactDom.renderToString(<App />);
-      return result;
+      const page = template({
+        content: result,
+      });
+      return page;
     },
   });
 
